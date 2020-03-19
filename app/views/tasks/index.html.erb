@@ -3,7 +3,8 @@
 <ul>
   <% @tasks.each do |task| %>
   <!--<li><%= task.content %></li>-->
-  <li><%= link_to task.content,task %></li>
+  <li>task--->: <%= link_to task.content,task %></li>
+  <li>status->: <%= task.status %></li>
   <% end %>
 </ul>
   
