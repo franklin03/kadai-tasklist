@@ -1,11 +1,29 @@
-<h1>Task一覧</h1>
+<header class="mb-4">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Task list</a>
+    <div class="justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to '新規task作成', new_task_path, class: 'nav-link' %></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <!--<li><%= task.content %></li>-->
-  <li>task--->: <%= link_to task.content,task %></li>
-  <li>status->: <%= task.status %></li>
+<div class="container-fluid">
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>task</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.content %></td>
+      <td><%= task.status %></td>
+    </tr>
   <% end %>
-</ul>
-  
-<%= link_to '新規taskの作成', new_task_path %>
+  </tbody>
+</table>
+</div>
