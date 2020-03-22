@@ -1,13 +1,21 @@
+
+<% if logged_in? %>
 <header class="mb-4">
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Task list</a>
     <div class="justify-content-end">
+    <!--<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">-->
       <ul class="navbar-nav">
         <li class="nav-item"><%= link_to '新規task作成', new_task_path, class: 'nav-link' %></li>
+        <!--<li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>-->
+        <!--<li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>-->
+        <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+
       </ul>
     </div>
   </nav>
 </header>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
 
 <div class="container-fluid">
 <table class="table table-striped" >
@@ -18,7 +26,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @tasks.each do |task| %>
+    <p>test1</p>
+    <%= puts @utask %>
+    <p>test2</p>
+    <% @utasks.each do |task| %>
+    <p>test</p>
     <tr>
       <td><%= task.content %></td>
       <td><%= task.status %></td>
@@ -27,3 +39,14 @@
   </tbody>
 </table>
 </div>
+
+
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to Task List</h1>
+    <%= link_to 'Sign up now?', signup_path, class: 'btn btn-lg btn-primary' %>
+    <%= link_to 'Log  in now?', login_path, class: 'btn btn-lg btn-primary' %>
+   </div>
+</div>
+<% end %>

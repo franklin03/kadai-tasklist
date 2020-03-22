@@ -1,6 +1,13 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    
+    if logged_in?
+      @utask = current_user.utasks.build  # form_with 用
+      @utasks = current_user.utasks.order(id: :desc)
+      # @utasks = current_user.utasks.order(id: :desc).page(params[:page]).per(25)
+    end
+ 
+    # @tasks = Task.all
   end
 
   def show
