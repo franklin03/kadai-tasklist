@@ -2,12 +2,13 @@ class TasksController < ApplicationController
   def index
     
     if logged_in?
-      @utask = current_user.utasks.build  # form_with 用
-      @utasks = current_user.utasks.order(id: :desc)
-      # @utasks = current_user.utasks.order(id: :desc).page(params[:page]).per(25)
+    #@tasks = Task.all
+      @task = current_user.tasks.build  # form_with 用
+      @tasks = current_user.tasks.order(id: :desc).page(params[:page])
+      # @tasks = current_user.tasks.order(id: :desc)
+    else
+      redirect_to :login
     end
- 
-    # @tasks = Task.all
   end
 
   def show
@@ -19,7 +20,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    # @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
+
     
     if @task.save
       flash[:success] = 'Taskが作成されました'
@@ -57,7 +60,7 @@ class TasksController < ApplicationController
   private 
 
   def task_params
-    params.require(:task).permit(:content,:status)
+    params.require(:task).permit(:content,:status, :user)
   end
   
 end

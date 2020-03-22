@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create] 
   
   resources :tasks
-  resources :utasks, only: [:create, :destroy] 
+#  resources :utasks, only: [:create, :destroy] 
 end

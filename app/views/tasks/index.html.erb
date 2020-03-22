@@ -26,11 +26,7 @@
     </tr>
   </thead>
   <tbody>
-    <p>test1</p>
-    <%= puts @utask %>
-    <p>test2</p>
-    <% @utasks.each do |task| %>
-    <p>test</p>
+    <% @tasks.each do |task| %>
     <tr>
       <td><%= task.content %></td>
       <td><%= task.status %></td>
@@ -45,8 +41,8 @@
   <div class="center jumbotron">
     <div class="text-center">
       <h1>Welcome to Task List</h1>
-    <%= link_to 'Sign up now?', signup_path, class: 'btn btn-lg btn-primary' %>
-    <%= link_to 'Log  in now?', login_path, class: 'btn btn-lg btn-primary' %>
-   </div>
-</div>
+      <%= link_to 'Sign up now?', signup_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Log  in now?', login_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
 <% end %>
