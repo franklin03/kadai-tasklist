@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <h1>id: <%= @task.id %> のtask詳細ページ</h1>
 
 <p>task::::  <%= @task.content %></p>
@@ -6,3 +8,7 @@
 <%= link_to '一覧に戻る', tasks_path %>
 <%= link_to 'このtaskを編集する', edit_task_path(@task) %>
 <%= link_to 'このtaskを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+<% else %>
+
+<% end %>
