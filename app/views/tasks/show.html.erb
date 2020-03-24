@@ -4,9 +4,6 @@
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">作成したTaskのページ</a>
     <div class="justify-content-end">
-      <!--<ul class="navbar-nav">-->
-      <!--  <li class="nav-item"><%= link_to '一覧に戻る', tasks_path, class: 'nav-link' %></li>-->
-      <!--</ul>-->
     </div>
   </nav>
 </header>
@@ -30,10 +27,9 @@
 
 
 <div class="container-fluid">
-    
-<li><%= link_to '一覧に戻る', tasks_path %></li>
-<li><%= link_to 'このtaskを編集する', edit_task_path(@task) %></li>
-<li><%= link_to 'このtaskを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+  <li><%= link_to '一覧に戻る', tasks_path %></li>
+  <li><%= link_to 'このtaskを編集する', edit_task_path(@task) %></li>
+  <li><%= link_to 'このtaskを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
 </div>
 
 <% else %>
