@@ -4,12 +4,10 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:show, :edit, :update, :destroy]
   
   def index
-    @task = current_user.tasks.build  # form_with 用
     @tasks = current_user.tasks.order(id: :desc).page(params[:page])
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new

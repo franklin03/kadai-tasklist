@@ -1,4 +1,18 @@
-<h1>id: <%= @task.id %> のtask編集ページ</h1>
+<div class="row ml-2 mr-2 mt-2">
+    <div class="col-md-6">
+        <header class="mb-4">
+           <nav class="navbar navbar-dark bg-dark">
+               <a class="navbar-brand" href="#">Taskの編集ページ</a>
+               </a>
+           </nav>
+        </header>
+    </div>
+</div>
 
 <%= render 'form' , task:@task %>
-<%= link_to '一覧に戻る', tasks_path %>
+
+<div class="row ml-2 mr-2 mt-2">
+    <div class="col-md-6">
+<%= link_to '一覧に戻る', tasks_path, class: 'btn btn-primary' %>
+    </div>
+</div>
