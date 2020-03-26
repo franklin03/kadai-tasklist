@@ -11,9 +11,8 @@
   <% end %>
 
 
-<div class="row ml-2 mr-2">
+  <div class="row ml-2 mr-2">
     <div class="col-md-6">
-      <form>
         <div class="form-group">
           <%= f.label :content, 'task' %>
           <%= f.text_field :content, class: 'form-control' %>
@@ -23,7 +22,6 @@
           <%= f.text_field :status, class: 'form-control' %>
         </div>
           <%= f.submit 'task投稿', class: 'btn btn-primary'%>
-      </form>
     </div>
   </div>
 <% end %>
