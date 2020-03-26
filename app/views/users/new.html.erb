@@ -2,7 +2,7 @@
   <h1>Sign up</h1>
 </div>
 
-<div class="row">
+<div class="row mr-2 ml-2">
   <div class="col-sm-6 offset-sm-3">
 
     <%= form_with(model: @user, local: true) do |f| %>
@@ -30,7 +30,9 @@
 
       <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
       
-      <%= link_to 'back to login page', login_path %>
+      <div class="mt-2 text-center">
+          <%= link_to 'back to login page', login_path %>
+      </div>
     <% end %>
   </div>
 </div>
